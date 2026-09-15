@@ -1,0 +1,7 @@
+<bean>
+    <bean id="circle">
+        class = "com.test.CircleShape">
+    </bean>
+
+
+</bean>
