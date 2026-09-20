@@ -44,5 +44,30 @@
         <servlet-name>FooterServlet</servlet-name>
         <url-pattern>/footer</url-pattern>
     </servlet-mapping>
+    <!--    Cookie Servlet-->
+    <servlet>
+        <servlet-name>CookieServlet</servlet-name>
+        <servlet-class>com.servlet.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieServlet</servlet-name>
+        <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+
+    <!--   Read Cookie Servlet-->
+    <servlet>
+        <servlet-name>ReadCookieServlet</servlet-name>
+        <servlet-class>com.servlet.ReadCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadCookieServlet</servlet-name>
+        <url-pattern>/read-cookie</url-pattern>
+    </servlet-mapping>
+
+
+    <context-param>
+        <param-name>appName</param-name>
+        <param-value>Exploregypt</param-value>
+    </context-param>
 
 </web-app>

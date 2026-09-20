@@ -1,5 +1,6 @@
 package com.servlet;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,13 +21,20 @@ public class ProfileServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        String username =
-                (String) request.getAttribute("username");
+
+        ServletContext context = getServletContext();
+
+        String appName = context.getInitParameter("appName");
+
+        String username = (String) context.getAttribute("currentUser");
+
+
 
         out.println("<html>");
         out.println("<body>");
 
-        out.println("<h1>Welcome " + username + " 👋</h1>");
+        out.println("<h1>Hi " + username + " 👋</h1>");
+        out.println("<h1>Welcome to " + appName + "</h1>");
 
         out.println("<p>This is your profile.</p>");
 
