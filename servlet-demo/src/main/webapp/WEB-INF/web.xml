@@ -2,38 +2,47 @@
 
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
-                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         xsi:schemaLocation="
+         https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
-    <servlet>
-        <servlet-name>MyServlet</servlet-name>
-        <servlet-class>com.servlet.MyServlet</servlet-class>
-
-        <!-- init params هنا -->
-    </servlet>
+    <!-- Login Servlet -->
 
     <servlet>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <servlet-class>com.servlet.WelcomeServlet</servlet-class>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.servlet.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
+
+    <!-- Profile Servlet -->
+
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.servlet.ProfileServlet</servlet-class>
+    </servlet>
 
     <servlet-mapping>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <url-pattern>/welcome</url-pattern>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/profile</url-pattern>
     </servlet-mapping>
 
 
-    <welcome-file-list>
-        <welcome-file>hello</welcome-file>
-    </welcome-file-list>
+    <!-- Footer Servlet -->
 
+    <servlet>
+        <servlet-name>FooterServlet</servlet-name>
+        <servlet-class>com.servlet.FooterServlet</servlet-class>
+    </servlet>
 
-
+    <servlet-mapping>
+        <servlet-name>FooterServlet</servlet-name>
+        <url-pattern>/footer</url-pattern>
+    </servlet-mapping>
 
 </web-app>
