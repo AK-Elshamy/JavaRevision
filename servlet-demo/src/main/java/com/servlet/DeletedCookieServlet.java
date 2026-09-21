@@ -1,18 +1,17 @@
 package com.servlet;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-public class CookieServlet extends HttpServlet {
+public class DeletedCookieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie cookie = new Cookie("username", "ahmed");
-        cookie.setMaxAge(30);
-        resp.addCookie(cookie);
+        resp.getWriter().println("""
+                <h2>Cookie Deleted</h2>
+                """);
     }
 }

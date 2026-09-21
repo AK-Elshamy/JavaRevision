@@ -1,18 +1,22 @@
 package com.servlet;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-public class CookieServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie cookie = new Cookie("username", "ahmed");
-        cookie.setMaxAge(30);
-        resp.addCookie(cookie);
+        HttpSession session = req.getSession(false);
+        if(session != null){
+            session.invalidate();
+            resp.getWriter().println("Session Removed");
+        }else{
+            resp.getWriter().println("No Active Session");
+        }
     }
 }

@@ -65,6 +65,59 @@
     </servlet-mapping>
 
 
+
+    <!--   Deleted Cookie Servlet-->
+    <servlet>
+        <servlet-name>DeletedCookieServlet</servlet-name>
+        <servlet-class>com.servlet.DeletedCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletedCookieServlet</servlet-name>
+        <url-pattern>/delete-cookie</url-pattern>
+    </servlet-mapping>
+
+
+    <!--   Session  Servlet-->
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>com.servlet.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+
+
+
+<!--    CheckSession Servlet-->
+
+    <servlet>
+        <servlet-name>CheckSessionServlet</servlet-name>
+        <servlet-class>com.servlet.CheckSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CheckSessionServlet</servlet-name>
+        <url-pattern>/check-session</url-pattern>
+    </servlet-mapping>
+
+
+
+
+    <!--    Logout Servlet-->
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.servlet.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+
     <context-param>
         <param-name>appName</param-name>
         <param-value>Exploregypt</param-value>
