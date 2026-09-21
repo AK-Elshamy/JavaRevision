@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+            http://maven.apache.org/POM/4.0.0
+            https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project Information -->
+    <groupId>com.myapp</groupId>
+    <artifactId>mini-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Build WAR file -->
+    <packaging>war</packaging>
+
+    <!-- Java Configuration -->
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- Dependencies -->
+    <dependencies>
+
+        <!-- Jakarta Servlet API -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- Build Configuration -->
+    <build>
+
+        <plugins>
+
+            <!-- Maven Compiler -->
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <version>1.10.27</version>
+
+                <configuration>
+
+                    <!-- Tomcat 10.1 running locally -->
+                    <container>
+                        <containerId>tomcat10x</containerId>
+                        <type>remote</type>
+                    </container>
+
+                    <!-- Tomcat connection configuration -->
+                    <configuration>
+                        <type>runtime</type>
+
+                        <properties>
+                            <cargo.hostname>localhost</cargo.hostname>
+                            <cargo.protocol>http</cargo.protocol>
+                            <cargo.servlet.port>8080</cargo.servlet.port>
+
+                            <cargo.remote.uri>http://localhost:8080/manager/text</cargo.remote.uri>
+
+                            <cargo.remote.username>admin</cargo.remote.username>
+                            <cargo.remote.password>admin</cargo.remote.password>
+                        </properties>
+                    </configuration>
+
+                    <!-- Remote deployer -->
+                    <deployer>
+                        <type>remote</type>
+                    </deployer>
+
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
