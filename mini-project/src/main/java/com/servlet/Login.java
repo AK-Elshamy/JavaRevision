@@ -13,10 +13,12 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String age = req.getParameter("age");
 
-        if ("elshamy".equals(username) && "12345".equals(password)){
+        if ("Ahmed".equals(username) && "12345".equals(password)){
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
+            session.setAttribute("age", age);
 
             resp.sendRedirect("profile");
         }else{
