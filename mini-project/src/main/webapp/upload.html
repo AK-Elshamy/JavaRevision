@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .upload-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 340px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 22px;
+        }
+
+        .drop-zone {
+            border: 2px dashed #3498db;
+            border-radius: 8px;
+            padding: 24px 16px;
+            cursor: pointer;
+            background-color: #f8fafc;
+            transition: background-color 0.2s, border-color 0.2s;
+            margin-bottom: 16px;
+        }
+
+        .drop-zone:hover {
+            background-color: #edf2f7;
+            border-color: #2980b9;
+        }
+
+        .drop-zone input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            color: #555555;
+            font-size: 14px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .file-name {
+            display: block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #27ae60;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<form
+        class="upload-card"
+    action="upload"
+    method="post"
+    enctype="multipart/form-data">
+
+    <input type="file" name="file">
+
+    <button type="submit">Upload</button>
+
+</form>
+</body>
+</html>

@@ -19,6 +19,7 @@ public class Profile extends HttpServlet {
             String age = (String) session.getAttribute("age");
             ServletContext context = getServletContext();
 
+            System.out.println("In profile Servlet process request ");
             context.setAttribute("username", "Ahmed Elshamy");
             req.setAttribute("username", username);
             req.setAttribute("age", age);

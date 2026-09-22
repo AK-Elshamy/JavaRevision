@@ -60,8 +60,54 @@
 
 
 
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>com.servlet.MyFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/profile</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>com.servlet.MyListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>com.servlet.MySessionListener</listener-class>
+    </listener>
 
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
+    <error-page>
+
+        <exception-type>
+            java.lang.NullPointerException
+        </exception-type>
+
+        <location>/error.jsp</location>
+
+    </error-page>
+
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.servlet.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
